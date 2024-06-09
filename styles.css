@@ -1,0 +1,466 @@
+html{
+    background-color: #020659;
+    margin: 0;
+    padding: 0;   
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ffffff;
+    width:375px;
+    margin:0 auto;
+    display:grid;
+}
+
+header {
+    /* grid-row:2/3; */
+    background: linear-gradient(to right, #2104d9 0%, #030a8c 30%, #030a8c 60%,#020659 100%);
+    color:#ffffff;
+    width:375px;
+}
+
+header p {
+    width:90%;
+    margin-left:30px;
+    margin:20px;
+}
+
+h1 {
+    font-size: 1.25em;
+    margin:20px;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+p, dl, dd {
+    font-size: 1em;
+}
+
+dl {
+    display:flex;
+    color:#590242;
+}
+
+footer p {
+    font-size: .75em;
+}
+
+/*nav*/
+
+nav {
+    grid-row:1/2;
+    background-color: #020873;
+    padding:0;
+    position: relative;
+    width:375px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    text-align: center;
+}
+
+li a {
+    display:block;
+    text-decoration: none;
+    color:#ffffff;
+    padding:20px;
+    padding-left: 0;
+    text-align: center;
+}
+ul> li:not(:first-child) > a {
+    text-transform: uppercase;
+}
+
+.hover:hover{
+     background-color: #590242;
+}
+
+ul > li:first-child > a {
+    font-variant: small-caps;
+    position:absolute;
+    top:-5px;
+    right:80px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+/* main */
+
+.caption {
+    position:absolute;
+    background-color:rgba(255,255,255,.5);
+    top:251px;
+    height:60px;
+    width:100%;
+    padding-left:5px;
+}
+
+.caption h3 {
+    color:#590242;
+    bottom:20px;
+    position:absolute;
+    text-transform: uppercase;
+    padding-left:5px;
+}
+
+.caption dl {
+    position: absolute;
+    top: 15px;
+}
+
+.caption dt {
+    font-style: italic;
+    margin-left:5px;
+}
+
+.caption dd {
+    margin-left:10px;
+}
+
+/* audio */
+audio {
+    position:absolute;
+    bottom: 150px;
+    left: 5px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+    
+}
+audio::-webkit-media-controls-play-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255,255,255,.50);
+}
+
+#trending h2 {
+    margin-left:25px;
+    color:#590242;
+    text-transform: uppercase;
+    margin-top:30px;
+}
+
+#playlists h2 {
+    margin-left:25px;
+    color:#590242;
+    text-transform: uppercase;
+    margin-top:50px;
+}
+
+#curated h2 {
+    margin-left:25px;
+    color: #590242;
+    text-transform: uppercase;
+    margin-top:50px;
+}
+
+#playlists .scroll1 {
+    background-color: #2699fb;
+    color:#ffffff; 
+}
+
+#playlists section {
+    background-color: #0d8dfb;
+    padding:10px;
+}
+
+#curated .scroll1 {
+    background-color: #030a8C;
+    color:#ffffff;
+}
+
+#curated section {
+    background-color: #020873;
+    padding:10px;
+}
+.scroll {
+    width:375px;
+    display:flex;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x:auto;
+    overflow-y: hidden;
+    margin-bottom: 15px;
+}
+
+.scroll1 section {
+    margin:10px;
+    text-align: center;
+    padding-top:0;
+}
+
+
+.scroll1 {
+    width:375px;
+    display:flex;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x:auto;
+    overflow-y: hidden;
+}
+
+.scroll section {
+    margin:10px;
+    position: relative;
+}
+
+#trending ::-webkit-scrollbar {
+    width:15px;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+}
+#trending ::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width:15px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background: #020659;
+    border-radius: 5px;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+/* button */
+.button {
+    background-color: #590242;
+    color:#ffffff;
+    border-radius:4px;
+    text-decoration: none;
+    padding:8px 30px 8px 30px;
+    margin-left: 30px;
+    margin-bottom:20px;
+}
+
+.button:hover {
+    background-color: #020659;
+}
+
+footer {
+    text-align: center;
+    padding-top:50px;
+    margin-bottom:15px;
+    color:#590242;
+
+}
+
+
+@media screen and (min-width:834px) {
+    body {
+        width:834px;
+    }
+    main {
+        display:grid;
+        grid-template-areas: 
+        "trending trending" "playlists curated"
+    }
+
+    nav {
+        display:flex;
+        width:834px;
+        position:relative;
+    }
+    header {
+        width:834px;
+    }
+
+    ul > li:first-child > a {
+        font-variant: small-caps;
+        font-size: 20px;
+        top: 5px;
+        right: auto;
+        left: 25px;
+    }
+
+    li a {
+        padding: 0px;
+        padding: 8.5px 0;
+    }
+
+    #trending {
+        grid-area: trending;
+    }
+
+    #playlists {
+        grid-area: playlists;
+    }
+
+    #curated {
+        grid-area: curated;
+    }
+
+    ul {
+        width:834px;
+        height:auto;
+        overflow: visible;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        background-color: #030a8C;
+    }
+
+    .scroll {
+        width: 834px;
+        display:flex;
+        grid-template-columns: repeat(5, 1fr);
+        overflow-x:auto;
+        overflow-y: hidden;
+        margin:0px;
+        margin-bottom: 15px;
+    }
+
+    .scroll1 {
+        height:485px;
+        width:400px;
+        display:grid;
+        grid-template-columns:1fr;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin:5px;
+    }
+    #playlists .scroll1 {
+        width:fit-content;
+        margin:0;
+    }
+
+    #playlists section {
+        display:grid;
+        grid-template-columns: 1fr 2fr; 
+        gap:10px;
+        margin-bottom: 5px;
+        position: relative;
+    }
+    #playlists img {
+        grid-row:1/3;
+        position:relative;
+    }
+    #playlists h3 + p {
+        grid-column:2;
+        margin:0;
+        position:relative;
+    }
+    #playlists h3 {
+        grid-row:1;
+        bottom:15px;
+        position:relative;
+    }
+
+    #playlists p {
+        grid-row:2;
+        bottom:40px;
+    }
+
+    #curated .scroll1 {
+        width:fit-content;
+        margin:0;
+    }
+    #curated section {
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        margin-bottom:5px;
+        gap:10px;
+        position:relative;
+    }
+    #curated img {
+        grid-row:1/3;
+        position:relative;
+    }
+    #curated h3 + p {
+        grid-row:2;
+        margin:0;
+        position:relative;
+    }
+    #curated h3 {
+        grid-row:1;
+        bottom:15px;
+        position: relative;
+    }
+    #curated p {
+        grid-row:2;
+        bottom:40px;
+        position: relative;
+    }
+     .button {
+        float:right;
+        margin-right:15px;
+        margin-top:-5px;
+     }
+
+    label{
+        padding-left: 0;
+    }
+    label span, input {
+        display: none;
+    }
+}
